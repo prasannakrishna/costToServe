@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+    <defs>
+        <style>.cls-1{fill:#fff;}.cls-2{fill:#6dcff6;}</style>
+        <linearGradient id="linear-gradient" x1="-235.957" y1="22.408" x2="369.394" y2="22.408" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#6dcff6"/>
+            <stop offset="0.999" stop-color="#00b7f1"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-10" x1="55.272" y1="25.067" x2="132.75" y2="25.067" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#6dcff6"/>
+            <stop offset="1" stop-color="#00b7f1"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-11" x1="55.272" y1="24.785" x2="132.75" y2="24.785" xlink:href="#linear-gradient-10"/>
+        <linearGradient id="linear-gradient-12" x1="55.272" y1="24.926" x2="132.75" y2="24.926" xlink:href="#linear-gradient-10"/>
+        <linearGradient id="linear-gradient-15" x1="55.272" y1="23.675" x2="132.75" y2="23.675" xlink:href="#linear-gradient-10"/>
+        <linearGradient id="linear-gradient-17" x1="55.272" y1="16.857" x2="132.75" y2="16.857" xlink:href="#linear-gradient-10"/>
+        <linearGradient id="linear-gradient-18" x1="55.272" y1="22.441" x2="132.75" y2="22.441" xlink:href="#linear-gradient-10"/>
+    </defs>
+    <title>Asset 2</title>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <path class="cls-2" d="M24,0,0,24,24,48,48,24Zm3.318,28.014h3.968l3.263-8.61-1.168-1.168-3.135,8.271H25.694l1.242,16.4L24,45.845l-3.06-3.06L22.1,26.507H17.524l-3.137-8.274L13.219,19.4l3.264,8.613h4l-1,13.314L2.155,24,24,2.155,45.845,24,28.329,41.516Z"/>
+            <path class="cls-2" d="M18.379,23.829h11.17l2.1-5.572H16.151ZM26.8,19.764h2.668l-.963,2.558H26.8Zm-4.3,0h2.79v2.558H22.5ZM21,22.322H19.4l-1.023-2.558H21Z"/>
+            <polygon class="cls-2" points="26.132 7.216 24.625 5.661 24.625 11.792 26.132 11.792 26.132 7.216"/>
+            <rect class="cls-2" x="21.44" y="8.068" width="1.507" height="3.724"/>
+            <polygon class="cls-2" points="29.156 12.853 18.647 12.853 17.14 14.36 30.663 14.36 29.156 12.853"/>
+            <polygon class="cls-2" points="33.138 15.458 14.634 15.458 13.133 16.959 13.133 16.965 34.645 16.965 33.138 15.458"/>
+        </g>
+    </g>
+</svg>

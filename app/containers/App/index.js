@@ -10,8 +10,9 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
+import NavBar from 'components/NavBar';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
-import { DarkTheme, NavBar, GlobalStyle } from 'luminate-platform-ui';
+import { DarkTheme, GlobalStyle } from 'luminate-platform-ui';
 
 import SamplePage from 'containers/SamplePage/Loadable';
 import Sample2Page from 'containers/Sample2Page/Loadable';
@@ -44,12 +45,12 @@ export default function App() {
             {
               visible: true,
               link: '/link1',
-              title: 'Link1',
+              title: 'LINK1',
             },
             {
               visible: true,
               link: '/link2',
-              title: 'Link2',
+              title: 'LINK2',
             },
           ]}
         />
