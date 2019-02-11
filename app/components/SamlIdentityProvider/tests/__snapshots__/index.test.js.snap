@@ -1,0 +1,740 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SamlIdentityProvider /> should be rendered correctly. 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SamlIdentityProvider />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="section centered"
+          style={
+            Object {
+              "boxSizing": "border-box",
+              "fontFamily": "Roboto",
+              "padding": "0 20px",
+              "position": "absolute",
+              "textAlign": "center",
+              "top": "50%",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            className="application-title"
+            style={
+              Object {
+                "color": "#FAFAFA",
+                "fontFamily": "Roboto",
+                "fontSize": "28px",
+                "fontWeight": "300",
+              }
+            }
+          >
+            JDA Luminate Control Tower
+          </div>
+          <div
+            className="login-button-wrapper"
+            style={
+              Object {
+                "marginTop": "10px",
+              }
+            }
+          >
+            <a
+              href="/auth"
+            >
+              <img
+                alt="sign in button"
+                height="47"
+                src="IMAGE_MOCK"
+                width="256"
+              />
+            </a>
+          </div>
+        </div>,
+        <div
+          className="section copyright-section"
+          style={
+            Object {
+              "bottom": "30px",
+              "boxSizing": "border-box",
+              "padding": "0 20px",
+              "position": "absolute",
+              "textAlign": "center",
+              "width": "100%",
+            }
+          }
+        >
+          <div>
+            <img
+              alt="JDA plan to deliver"
+              src="IMAGE_MOCK"
+            />
+          </div>
+          <span
+            className="copyright-msg"
+            style={
+              Object {
+                "color": "white",
+                "fontFamily": "Roboto",
+                "fontSize": "10px",
+                "opacity": "0.55",
+                "textAlign": "center",
+              }
+            }
+          >
+            Copyright © 2018, JDA Software Group, Inc. ALL RIGHTS RESERVED.
+            <br />
+            This software is the confidential information of JDA Software, Inc., and is licensed as restricted rights software.The use, 
+            <br />
+            reproduction, or disclosure of this software is subject to restrictions set forth in your license agreement with JDA.
+          </span>
+        </div>,
+      ],
+      "style": Object {
+        "borderRadius": "3px",
+        "boxSizing": "border-box",
+        "height": "100%",
+        "maxWidth": "600px",
+        "padding": "0 20px",
+        "width": "100%",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="application-title"
+              style={
+                Object {
+                  "color": "#FAFAFA",
+                  "fontFamily": "Roboto",
+                  "fontSize": "28px",
+                  "fontWeight": "300",
+                }
+              }
+            >
+              JDA Luminate Control Tower
+            </div>,
+            <div
+              className="login-button-wrapper"
+              style={
+                Object {
+                  "marginTop": "10px",
+                }
+              }
+            >
+              <a
+                href="/auth"
+              >
+                <img
+                  alt="sign in button"
+                  height="47"
+                  src="IMAGE_MOCK"
+                  width="256"
+                />
+              </a>
+            </div>,
+          ],
+          "className": "section centered",
+          "style": Object {
+            "boxSizing": "border-box",
+            "fontFamily": "Roboto",
+            "padding": "0 20px",
+            "position": "absolute",
+            "textAlign": "center",
+            "top": "50%",
+            "width": "100%",
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "JDA Luminate Control Tower",
+              "className": "application-title",
+              "style": Object {
+                "color": "#FAFAFA",
+                "fontFamily": "Roboto",
+                "fontSize": "28px",
+                "fontWeight": "300",
+              },
+            },
+            "ref": null,
+            "rendered": "JDA Luminate Control Tower",
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <a
+                href="/auth"
+              >
+                <img
+                  alt="sign in button"
+                  height="47"
+                  src="IMAGE_MOCK"
+                  width="256"
+                />
+              </a>,
+              "className": "login-button-wrapper",
+              "style": Object {
+                "marginTop": "10px",
+              },
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <img
+                  alt="sign in button"
+                  height="47"
+                  src="IMAGE_MOCK"
+                  width="256"
+                />,
+                "href": "/auth",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "sign in button",
+                  "height": "47",
+                  "src": "IMAGE_MOCK",
+                  "width": "256",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              "type": "a",
+            },
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div>
+              <img
+                alt="JDA plan to deliver"
+                src="IMAGE_MOCK"
+              />
+            </div>,
+            <span
+              className="copyright-msg"
+              style={
+                Object {
+                  "color": "white",
+                  "fontFamily": "Roboto",
+                  "fontSize": "10px",
+                  "opacity": "0.55",
+                  "textAlign": "center",
+                }
+              }
+            >
+              Copyright © 2018, JDA Software Group, Inc. ALL RIGHTS RESERVED.
+              <br />
+              This software is the confidential information of JDA Software, Inc., and is licensed as restricted rights software.The use, 
+              <br />
+              reproduction, or disclosure of this software is subject to restrictions set forth in your license agreement with JDA.
+            </span>,
+          ],
+          "className": "section copyright-section",
+          "style": Object {
+            "bottom": "30px",
+            "boxSizing": "border-box",
+            "padding": "0 20px",
+            "position": "absolute",
+            "textAlign": "center",
+            "width": "100%",
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <img
+                alt="JDA plan to deliver"
+                src="IMAGE_MOCK"
+              />,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "JDA plan to deliver",
+                "src": "IMAGE_MOCK",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Copyright © 2018, JDA Software Group, Inc. ALL RIGHTS RESERVED.",
+                <br />,
+                "This software is the confidential information of JDA Software, Inc., and is licensed as restricted rights software.The use, ",
+                <br />,
+                "reproduction, or disclosure of this software is subject to restrictions set forth in your license agreement with JDA.",
+              ],
+              "className": "copyright-msg",
+              "style": Object {
+                "color": "white",
+                "fontFamily": "Roboto",
+                "fontSize": "10px",
+                "opacity": "0.55",
+                "textAlign": "center",
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              "Copyright © 2018, JDA Software Group, Inc. ALL RIGHTS RESERVED.",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "br",
+              },
+              "This software is the confidential information of JDA Software, Inc., and is licensed as restricted rights software.The use, ",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": "br",
+              },
+              "reproduction, or disclosure of this software is subject to restrictions set forth in your license agreement with JDA.",
+            ],
+            "type": "span",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="section centered"
+            style={
+              Object {
+                "boxSizing": "border-box",
+                "fontFamily": "Roboto",
+                "padding": "0 20px",
+                "position": "absolute",
+                "textAlign": "center",
+                "top": "50%",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="application-title"
+              style={
+                Object {
+                  "color": "#FAFAFA",
+                  "fontFamily": "Roboto",
+                  "fontSize": "28px",
+                  "fontWeight": "300",
+                }
+              }
+            >
+              JDA Luminate Control Tower
+            </div>
+            <div
+              className="login-button-wrapper"
+              style={
+                Object {
+                  "marginTop": "10px",
+                }
+              }
+            >
+              <a
+                href="/auth"
+              >
+                <img
+                  alt="sign in button"
+                  height="47"
+                  src="IMAGE_MOCK"
+                  width="256"
+                />
+              </a>
+            </div>
+          </div>,
+          <div
+            className="section copyright-section"
+            style={
+              Object {
+                "bottom": "30px",
+                "boxSizing": "border-box",
+                "padding": "0 20px",
+                "position": "absolute",
+                "textAlign": "center",
+                "width": "100%",
+              }
+            }
+          >
+            <div>
+              <img
+                alt="JDA plan to deliver"
+                src="IMAGE_MOCK"
+              />
+            </div>
+            <span
+              className="copyright-msg"
+              style={
+                Object {
+                  "color": "white",
+                  "fontFamily": "Roboto",
+                  "fontSize": "10px",
+                  "opacity": "0.55",
+                  "textAlign": "center",
+                }
+              }
+            >
+              Copyright © 2018, JDA Software Group, Inc. ALL RIGHTS RESERVED.
+              <br />
+              This software is the confidential information of JDA Software, Inc., and is licensed as restricted rights software.The use, 
+              <br />
+              reproduction, or disclosure of this software is subject to restrictions set forth in your license agreement with JDA.
+            </span>
+          </div>,
+        ],
+        "style": Object {
+          "borderRadius": "3px",
+          "boxSizing": "border-box",
+          "height": "100%",
+          "maxWidth": "600px",
+          "padding": "0 20px",
+          "width": "100%",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="application-title"
+                style={
+                  Object {
+                    "color": "#FAFAFA",
+                    "fontFamily": "Roboto",
+                    "fontSize": "28px",
+                    "fontWeight": "300",
+                  }
+                }
+              >
+                JDA Luminate Control Tower
+              </div>,
+              <div
+                className="login-button-wrapper"
+                style={
+                  Object {
+                    "marginTop": "10px",
+                  }
+                }
+              >
+                <a
+                  href="/auth"
+                >
+                  <img
+                    alt="sign in button"
+                    height="47"
+                    src="IMAGE_MOCK"
+                    width="256"
+                  />
+                </a>
+              </div>,
+            ],
+            "className": "section centered",
+            "style": Object {
+              "boxSizing": "border-box",
+              "fontFamily": "Roboto",
+              "padding": "0 20px",
+              "position": "absolute",
+              "textAlign": "center",
+              "top": "50%",
+              "width": "100%",
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "JDA Luminate Control Tower",
+                "className": "application-title",
+                "style": Object {
+                  "color": "#FAFAFA",
+                  "fontFamily": "Roboto",
+                  "fontSize": "28px",
+                  "fontWeight": "300",
+                },
+              },
+              "ref": null,
+              "rendered": "JDA Luminate Control Tower",
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <a
+                  href="/auth"
+                >
+                  <img
+                    alt="sign in button"
+                    height="47"
+                    src="IMAGE_MOCK"
+                    width="256"
+                  />
+                </a>,
+                "className": "login-button-wrapper",
+                "style": Object {
+                  "marginTop": "10px",
+                },
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <img
+                    alt="sign in button"
+                    height="47"
+                    src="IMAGE_MOCK"
+                    width="256"
+                  />,
+                  "href": "/auth",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "sign in button",
+                    "height": "47",
+                    "src": "IMAGE_MOCK",
+                    "width": "256",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                "type": "a",
+              },
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div>
+                <img
+                  alt="JDA plan to deliver"
+                  src="IMAGE_MOCK"
+                />
+              </div>,
+              <span
+                className="copyright-msg"
+                style={
+                  Object {
+                    "color": "white",
+                    "fontFamily": "Roboto",
+                    "fontSize": "10px",
+                    "opacity": "0.55",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Copyright © 2018, JDA Software Group, Inc. ALL RIGHTS RESERVED.
+                <br />
+                This software is the confidential information of JDA Software, Inc., and is licensed as restricted rights software.The use, 
+                <br />
+                reproduction, or disclosure of this software is subject to restrictions set forth in your license agreement with JDA.
+              </span>,
+            ],
+            "className": "section copyright-section",
+            "style": Object {
+              "bottom": "30px",
+              "boxSizing": "border-box",
+              "padding": "0 20px",
+              "position": "absolute",
+              "textAlign": "center",
+              "width": "100%",
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <img
+                  alt="JDA plan to deliver"
+                  src="IMAGE_MOCK"
+                />,
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "JDA plan to deliver",
+                  "src": "IMAGE_MOCK",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Copyright © 2018, JDA Software Group, Inc. ALL RIGHTS RESERVED.",
+                  <br />,
+                  "This software is the confidential information of JDA Software, Inc., and is licensed as restricted rights software.The use, ",
+                  <br />,
+                  "reproduction, or disclosure of this software is subject to restrictions set forth in your license agreement with JDA.",
+                ],
+                "className": "copyright-msg",
+                "style": Object {
+                  "color": "white",
+                  "fontFamily": "Roboto",
+                  "fontSize": "10px",
+                  "opacity": "0.55",
+                  "textAlign": "center",
+                },
+              },
+              "ref": null,
+              "rendered": Array [
+                "Copyright © 2018, JDA Software Group, Inc. ALL RIGHTS RESERVED.",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "br",
+                },
+                "This software is the confidential information of JDA Software, Inc., and is licensed as restricted rights software.The use, ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "br",
+                },
+                "reproduction, or disclosure of this software is subject to restrictions set forth in your license agreement with JDA.",
+              ],
+              "type": "span",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

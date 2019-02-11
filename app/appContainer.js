@@ -8,7 +8,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import { Route, Switch } from 'react-router-dom';
-
+import SamlIdentityProvider from 'components/SamlIdentityProvider';
 import App from 'containers/App';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -17,6 +17,7 @@ class AppContainer extends React.Component {
     return (
       <div>
         <Switch>
+          <Route exact path="/login" component={SamlIdentityProvider} />
           <Route path="/" component={App} />
         </Switch>
       </div>
