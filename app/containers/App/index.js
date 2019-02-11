@@ -11,11 +11,10 @@ import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
-import { LightTheme, DarkTheme, NavBar, NavPanel, GlobalStyle } from 'luminate-platform-ui';
+import { DarkTheme, NavBar, GlobalStyle } from 'luminate-platform-ui';
 
-import HomePage from 'containers/HomePage/Loadable';
-import FeaturePage from 'containers/FeaturePage/Loadable';
-import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import SamplePage from 'containers/SamplePage/Loadable';
+import Sample2Page from 'containers/Sample2Page/Loadable';
 
 // import GlobalStyle from '../../global-styles';
 
@@ -56,9 +55,9 @@ export default function App() {
         />
 
         <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/link1" component={FeaturePage} />
-          <Route path="/link2" component={NotFoundPage} />
+          <Route exact path="/" component={SamplePage} />
+          <Route path="/link1" component={SamplePage} />
+          <Route path="/link2" component={Sample2Page} />
         </Switch>
         <GlobalStyle />
       </AppWrapper>
