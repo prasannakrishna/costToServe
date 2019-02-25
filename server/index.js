@@ -14,6 +14,12 @@ const ngrok =
 const { resolve } = require('path');
 const app = express();
 
+const expressConfig = require('./config/express');
+const routesConfig = require('./routes');
+
+expressConfig(app);
+routesConfig(app);
+
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 // app.use('/api', myApi);
 
