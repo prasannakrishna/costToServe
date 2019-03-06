@@ -12,7 +12,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavPanel } from 'luminate-platform-ui';
+import { NavPanel } from '@jda/luminate-platform-ui';
 
 import { compose } from 'redux';
 import { withRouter } from 'react-router';
@@ -63,7 +63,8 @@ const styles = () => ({
   },
 });
 
-export class NavBar extends React.Component { // eslint-disable-line react/prefer-stateless-function
+export class NavBar extends React.Component {
+  // eslint-disable-line react/prefer-stateless-function
   state = {
     left: false,
   };

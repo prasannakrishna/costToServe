@@ -4,10 +4,28 @@
  *
  */
 
-import { DEFAULT_ACTION } from './constants';
+import {
+  LOAD_CONFIG,
+  LOAD_CONFIG_ERROR,
+  LOAD_CONFIG_SUCCESS,
+} from './constants';
 
-export function defaultAction() {
+export function loadConfig() {
   return {
-    type: DEFAULT_ACTION,
+    type: LOAD_CONFIG,
+  };
+}
+
+export function configLoaded(configurations) {
+  return {
+    type: LOAD_CONFIG_SUCCESS,
+    configurations,
+  };
+}
+
+export function configLoadingError(error) {
+  return {
+    type: LOAD_CONFIG_ERROR,
+    error,
   };
 }

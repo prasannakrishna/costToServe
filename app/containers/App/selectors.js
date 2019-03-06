@@ -8,6 +8,11 @@ const selectGlobal = state => state.get('global');
 
 const selectRouter = state => state.get('router');
 
+const selectAppDomain = state => state.get('app');
+
+const makeSelectApp = () =>
+  createSelector(selectAppDomain, substate => substate.toJS());
+
 const makeSelectCurrentUser = () =>
   createSelector(selectGlobal, globalState => globalState.get('currentUser'));
 
@@ -34,4 +39,5 @@ export {
   makeSelectError,
   makeSelectRepos,
   makeSelectLocation,
+  makeSelectApp,
 };

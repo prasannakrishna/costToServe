@@ -7,7 +7,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
@@ -16,21 +15,30 @@ import injectReducer from 'utils/injectReducer';
 import makeSelectSamplePage from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import messages from './messages';
+
+import { loadConfig } from './actions';
 
 /* eslint-disable react/prefer-stateless-function */
 export class SamplePage extends React.Component {
+  componentWillMount() {
+    this.props.onLoadConfig();
+  }
+
   render() {
+    const { configurations } = this.props.samplePage;
     return (
       <div>
-        <FormattedMessage {...messages.header} />
+        <div>Welcome to YODA Platform</div>
+        <div>Here is some sample data from REST API</div>
+        {configurations.totalCount}
       </div>
     );
   }
 }
 
 SamplePage.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  onLoadConfig: PropTypes.func,
+  samplePage: PropTypes.object,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -40,6 +48,7 @@ const mapStateToProps = createStructuredSelector({
 function mapDispatchToProps(dispatch) {
   return {
     dispatch,
+    onLoadConfig: () => dispatch(loadConfig()),
   };
 }
 

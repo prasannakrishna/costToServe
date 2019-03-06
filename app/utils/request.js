@@ -1,4 +1,15 @@
 /**
+ * Copyright © 2018, JDA Software Group, Inc. ALL RIGHTS RESERVED.
+ * <p>
+ * This software is the confidential information of JDA Software, Inc., and is licensed
+ * as restricted rights software. The use,reproduction, or disclosure of this software
+ * is subject to restrictions set forth in your license agreement with JDA.
+ */
+import 'whatwg-fetch';
+
+// import * as TimeUtils from './timeUtils';
+// import client from './eventEmit';
+/**
  * Parses the JSON returned by a network request
  *
  * @param  {object} response A response from a network request
@@ -8,6 +19,25 @@
 function parseJSON(response) {
   if (response.status === 204 || response.status === 205) {
     return null;
+  }
+  const contentType = response.headers.get('content-type');
+  if (
+    (contentType && contentType.indexOf('text/csv') !== -1) ||
+    (contentType && contentType.indexOf('application/octet-stream') !== -1)
+  ) {
+    const headers = response.headers.get('content-disposition');
+    const name = headers.split('=')[1];
+    response.blob().then(blob => {
+      const url = window.URL.createObjectURL(
+        new Blob([blob], { type: contentType }),
+      );
+      const link = document.createElement('a');
+      link.style = 'display: none';
+      link.href = url;
+      link.setAttribute('download', name);
+      document.body.appendChild(link);
+      link.click();
+    });
   }
   return response.json();
 }
@@ -24,9 +54,33 @@ function checkStatus(response) {
     return response;
   }
 
-  const error = new Error(response.statusText);
-  error.response = response;
-  throw error;
+  // Redirect to login
+  if (response.status === 401) {
+    return window.location.assign('/login');
+  }
+
+  return response.json().then(json => {
+    const error = {
+      json,
+      url: response.url,
+      throwError: true,
+    };
+    return error;
+  });
+}
+
+function checkException(response) {
+  if (response.throwError === true) {
+    const error = new Error(response.errmsg);
+    error.error = response.json;
+
+    if (error.error && !error.error.message) {
+      // error.error.message = `Unexpected server error [${response.url.split('/').pop()} ${TimeUtils.formatDate(new Date(), 'LONG-TIME')}]`;
+    }
+    // client.emit('errorEvent', error.error);
+    throw error;
+  }
+  return response;
 }
 
 /**
@@ -38,7 +92,38 @@ function checkStatus(response) {
  * @return {object}           The response data
  */
 export default function request(url, options) {
-  return fetch(url, options)
+  const newOptions = options;
+  // Rewrite to GET for dev purposes
+  // This supports POST to return some kind of data
+  // if (process.env.NODE_ENV === 'development' && newOptions) {
+  //   if (newOptions.method) {
+  //     delete newOptions.method;
+  //   }
+  //
+  //   if (newOptions.body) {
+  //     delete newOptions.body;
+  //   }
+  // }
+
+  //   console.log(newOptions);
+
+  // Use credentials with same-origin to prevent new session every request
+  // PUT condition added to skip parseJSON call, as response body doesn't contain anything, bcoz of which response.json() is returning error
+  if (options && options.method === 'PUT') {
+    return fetch(url, { ...newOptions, credentials: 'same-origin' })
+      .then(checkStatus)
+      .then(checkException)
+      .catch(error => {
+        // client.emit('errorEvent', error.error);
+        throw error;
+      });
+  }
+  return fetch(url, { ...newOptions, credentials: 'same-origin' })
     .then(checkStatus)
-    .then(parseJSON);
+    .then(checkException)
+    .then(parseJSON)
+    .catch(error => {
+      // client.emit('errorEvent', error.error);
+      throw error;
+    });
 }

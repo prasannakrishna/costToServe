@@ -87,7 +87,7 @@
     "ip": "1.1.5",
     "loadable-components": "2.2.3",
     "lodash": "4.17.11",
-    "luminate-platform-ui": "^1.0.26",
+    "@jda/luminate-platform-ui": "^1.0.32",
     "minimist": "1.2.0",
     "prop-types": "15.6.2",
     "radium": "^0.21.1",
