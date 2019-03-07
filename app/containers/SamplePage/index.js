@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
+import Typography from '@material-ui/core/Typography';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
@@ -27,10 +28,12 @@ export class SamplePage extends React.Component {
   render() {
     const { configurations } = this.props.samplePage;
     return (
-      <div>
-        <div>Welcome to YODA Platform</div>
-        <div>Here is some sample data from REST API</div>
-        {configurations.totalCount}
+      <div style={{ margin: 5 }}>
+        <Typography variant="title">Welcome to YODA Platform</Typography>
+        <Typography variant="body2">
+          Here is a sample data from REST API
+        </Typography>
+        <Typography variant="body2">{configurations.totalCount}</Typography>
       </div>
     );
   }
