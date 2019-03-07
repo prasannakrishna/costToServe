@@ -4,7 +4,17 @@
 2.  Clone this repo using `git clone --depth=1 ssh://git@stash.jda.com:7999/yoda/luminate-ui-starter-project.git <YOUR_PROJECT_NAME>`
 3.  Move to the appropriate directory: `cd <YOUR_PROJECT_NAME>`.<br />
 4.  Run `npm install` in order to install dependencies and clean the git repo.<br />
-    _At this point you can run `npm start` to see the example app at `http://localhost:3000`._
+    _At this point you can run `npm start` to see the example app at `http://localhost:3000`.
+5.  Here are some environment variables to connect to backend and authentication service. Change to your own value as part of npm start
+    ``OAUTH_AZURE_AD_CALLBACK_URL=http://localhost:3000/auth/callback
+    API_URL=http://lct.jdadelivers.com
+    ``
+    
+    Full command is as follow:
+    ``
+    OAUTH_AZURE_AD_CALLBACK_URL=http://localhost:3000/auth/callback
+        API_URL=http://lct.jdadelivers.com npm start
+        ``
 
 
 ## Documentation
