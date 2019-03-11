@@ -42,7 +42,10 @@
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "prettify": "prettier --write"
+    "prettify": "prettier --write",
+    "copy": "shx mkdir dist && shx cp -r build dist && shx cp -r server dist && shx cp -r internals dist && shx cp docker/* dist",
+    "docker:prep": "npm run build && npm run copy",
+    "docker:build": "docker build --build-arg OAUTH_AZURE_AD_CALLBACK_URL=$OAUTH_AZURE_AD_CALLBACK_URL --build-arg API_URL=$API_URL -t dctcontainerregistry.azurecr.io/dctui:$VERSION ."
   },
   "lint-staged": {
     "*.js": [
@@ -163,6 +166,7 @@
     "react-test-renderer": "16.6.0",
     "rimraf": "2.6.2",
     "shelljs": "^0.8.2",
+    "shx": "^0.3.2",
     "style-loader": "0.23.1",
     "stylelint": "9.6.0",
     "stylelint-config-recommended": "2.1.0",

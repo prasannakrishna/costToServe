@@ -92,7 +92,7 @@ class SamlIdentityProvider extends React.Component {
                   className="application-title"
                   style={applicationTitleStyle}
                 >
-                  JDA Luminate Control Tower
+                  JDA Luminate YODA Platform
                 </div>
                 <div
                   className="login-button-wrapper"
