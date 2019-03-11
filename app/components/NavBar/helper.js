@@ -10,7 +10,7 @@ import Radium from 'radium';
 import { Link } from 'react-router-dom';
 import { Breadcrumb } from 'antd';
 import BreadcrumbConfig from 'auto-breadcrumb';
-
+import Background from './lcticon.svg';
 import './style.css';
 
 const RadiatingLink = Radium(Link);
@@ -21,13 +21,26 @@ export const bcRender = (name, path) => {
       <RadiatingLink
         className="link"
         to={path}
-        style={{ color: '#91aed7', ':hover': { color: 'white' } }}
+        style={{
+          color: '#91aed7',
+          ':hover': { color: 'white' },
+          paddingLeft: 5,
+          paddingRight: 5,
+        }}
       >
-        {'   '}
         {name}
-        {'   '}
       </RadiatingLink>
-    ) : `   ${name}   `;
+    ) : (
+      <span
+        style={{
+          color: 'white',
+          paddingLeft: 5,
+          paddingRight: 5,
+        }}
+      >
+        {`${name}`}
+      </span>
+    );
   }
   return '';
 };
@@ -37,7 +50,8 @@ export const idStringpify = () => ' ';
 
 export const Breadcrumbs = BreadcrumbConfig({
   staticRoutesMap: {
-    '/': 'Home Page',
+    // '/': '',
+    '/': <img src={Background} className="iconHome" alt="Watch Tower Icon" />,
     // '/homepage': <img src={Background} className="icon" alt="Watch Tower Icon" />,
     '/link1': 'Link 1',
     '/link2': 'Link 2',
