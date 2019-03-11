@@ -33,6 +33,6 @@ WORKDIR /app
 
 ADD ./dist /app
 
-RUN yarn install --production --no-progress
+RUN npm install --production --no-progress
 
-CMD [ "yarn", "run", "start"]
+CMD [ "npm", "start"]
