@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2018, JDA Software Group, Inc. ALL RIGHTS RESERVED.
+ * <p>
+ * This software is the confidential information of JDA Software, Inc., and is licensed
+ * as restricted rights software. The use,reproduction, or disclosure of this software
+ * is subject to restrictions set forth in your license agreement with JDA.
+ */
 /* eslint-disable no-console */
 
 const chalk = require('chalk');
@@ -9,8 +16,9 @@ const divider = chalk.gray('\n-----------------------------------');
  * Logger middleware, you can customize it to make messages more personal
  */
 const logger = {
+
   // Called whenever there's an error on the server we want to print
-  error: err => {
+  error: (err) => {
     console.error(chalk.red(err));
   },
 
@@ -27,9 +35,7 @@ const logger = {
 ${chalk.bold('Access URLs:')}${divider}
 Localhost: ${chalk.magenta(`http://${host}:${port}`)}
       LAN: ${chalk.magenta(`http://${ip.address()}:${port}`) +
-        (tunnelStarted
-          ? `\n    Proxy: ${chalk.magenta(tunnelStarted)}`
-          : '')}${divider}
+(tunnelStarted ? `\n    Proxy: ${chalk.magenta(tunnelStarted)}` : '')}${divider}
 ${chalk.blue(`Press ${chalk.italic('CTRL-C')} to stop`)}
     `);
   },

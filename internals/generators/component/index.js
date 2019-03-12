@@ -1,4 +1,11 @@
 /**
+ * Copyright © 2018, JDA Software Group, Inc. ALL RIGHTS RESERVED.
+ * <p>
+ * This software is the confidential information of JDA Software, Inc., and is licensed
+ * as restricted rights software. The use,reproduction, or disclosure of this software
+ * is subject to restrictions set forth in your license agreement with JDA.
+ */
+/**
  * Component Generator
  */
 
@@ -10,47 +17,36 @@ const componentExists = require('../utils/componentExists');
 
 module.exports = {
   description: 'Add an unconnected component',
-  prompts: [
-    {
-      type: 'list',
-      name: 'type',
-      message: 'Select the type of component',
-      default: 'Stateless Function',
-      choices: () => [
-        'Stateless Function',
-        'React.PureComponent',
-        'React.Component',
-      ],
-    },
-    {
-      type: 'input',
-      name: 'name',
-      message: 'What should it be called?',
-      default: 'Button',
-      validate: value => {
-        if (/.+/.test(value)) {
-          return componentExists(value)
-            ? 'A component or container with this name already exists'
-            : true;
-        }
+  prompts: [{
+    type: 'list',
+    name: 'type',
+    message: 'Select the type of component',
+    default: 'Stateless Function',
+    choices: () => ['Stateless Function', 'React.PureComponent', 'React.Component'],
+  }, {
+    type: 'input',
+    name: 'name',
+    message: 'What should it be called?',
+    default: 'Button',
+    validate: (value) => {
+      if ((/.+/).test(value)) {
+        return componentExists(value) ? 'A component or container with this name already exists' : true;
+      }
 
-        return 'The name is required';
-      },
+      return 'The name is required';
     },
-    {
-      type: 'confirm',
-      name: 'wantMessages',
-      default: true,
-      message: 'Do you want i18n messages (i.e. will this component use text)?',
-    },
-    {
-      type: 'confirm',
-      name: 'wantLoadable',
-      default: false,
-      message: 'Do you want to load the component asynchronously?',
-    },
-  ],
-  actions: data => {
+  }, {
+    type: 'confirm',
+    name: 'wantMessages',
+    default: true,
+    message: 'Do you want i18n messages (i.e. will this component use text)?',
+  }, {
+    type: 'confirm',
+    name: 'wantLoadable',
+    default: false,
+    message: 'Do you want to load the component asynchronously?',
+  }],
+  actions: (data) => {
     // Generate index.js and index.test.js
     let componentTemplate;
 
@@ -64,20 +60,17 @@ module.exports = {
       }
     }
 
-    const actions = [
-      {
-        type: 'add',
-        path: '../../app/components/{{properCase name}}/index.js',
-        templateFile: componentTemplate,
-        abortOnFail: true,
-      },
-      {
-        type: 'add',
-        path: '../../app/components/{{properCase name}}/tests/index.test.js',
-        templateFile: './component/test.js.hbs',
-        abortOnFail: true,
-      },
-    ];
+    const actions = [{
+      type: 'add',
+      path: '../../app/components/{{properCase name}}/index.js',
+      templateFile: componentTemplate,
+      abortOnFail: true,
+    }, {
+      type: 'add',
+      path: '../../app/components/{{properCase name}}/tests/index.test.js',
+      templateFile: './component/test.js.hbs',
+      abortOnFail: true,
+    }];
 
     // If they want a i18n messages file
     if (data.wantMessages) {
@@ -98,11 +91,6 @@ module.exports = {
         abortOnFail: true,
       });
     }
-
-    actions.push({
-      type: 'prettify',
-      path: '/components/',
-    });
 
     return actions;
   },

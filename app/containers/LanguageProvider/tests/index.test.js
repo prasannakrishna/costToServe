@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2018, JDA Software Group, Inc. ALL RIGHTS RESERVED.
+ * <p>
+ * This software is the confidential information of JDA Software, Inc., and is licensed
+ * as restricted rights software. The use,reproduction, or disclosure of this software
+ * is subject to restrictions set forth in your license agreement with JDA.
+ */
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { FormattedMessage, defineMessages } from 'react-intl';
@@ -19,11 +26,11 @@ const messages = defineMessages({
 
 describe('<LanguageProvider />', () => {
   it('should render its children', () => {
-    const children = <h1>Test</h1>;
+    const children = (<h1>Test</h1>);
     const renderedComponent = shallow(
       <LanguageProvider messages={messages} locale="en">
         {children}
-      </LanguageProvider>,
+      </LanguageProvider>
     );
     expect(renderedComponent.contains(children)).toBe(true);
   });
@@ -42,12 +49,8 @@ describe('<ConnectedLanguageProvider />', () => {
         <ConnectedLanguageProvider messages={translationMessages}>
           <FormattedMessage {...messages.someMessage} />
         </ConnectedLanguageProvider>
-      </Provider>,
+      </Provider>
     );
-    expect(
-      renderedComponent.contains(
-        <FormattedMessage {...messages.someMessage} />,
-      ),
-    ).toBe(true);
+    expect(renderedComponent.contains(<FormattedMessage {...messages.someMessage} />)).toBe(true);
   });
 });

@@ -1,4 +1,11 @@
 /**
+ * Copyright © 2018, JDA Software Group, Inc. ALL RIGHTS RESERVED.
+ * <p>
+ * This software is the confidential information of JDA Software, Inc., and is licensed
+ * as restricted rights software. The use,reproduction, or disclosure of this software
+ * is subject to restrictions set forth in your license agreement with JDA.
+ */
+/**
  * COMMON WEBPACK CONFIGURATION
  */
 
@@ -11,18 +18,12 @@ const webpack = require('webpack');
 // in the next major version of loader-utils.'
 process.noDeprecation = true;
 
-module.exports = options => ({
-  mode: options.mode,
+module.exports = (options) => ({
   entry: options.entry,
-  output: Object.assign(
-    {
-      // Compile into js/build.js
-      path: path.resolve(process.cwd(), 'build'),
-      publicPath: '/',
-    },
-    options.output,
-  ), // Merge with env dependent settings
-  optimization: options.optimization,
+  output: Object.assign({ // Compile into js/build.js
+    path: path.resolve(process.cwd(), 'build'),
+    publicPath: '/',
+  }, options.output), // Merge with env dependent settings
   module: {
     rules: [
       {
@@ -48,60 +49,23 @@ module.exports = options => ({
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(eot|otf|ttf|woff|woff2)$/,
+        test: /\.(eot|svg|otf|ttf|woff|woff2)$/,
         use: 'file-loader',
-      },
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: 'svg-url-loader',
-            options: {
-              // Inline files smaller than 10 kB
-              limit: 10 * 1024,
-              noquotes: true,
-            },
-          },
-        ],
       },
       {
         test: /\.(jpg|png|gif)$/,
         use: [
-          {
-            loader: 'url-loader',
-            options: {
-              // Inline files smaller than 10 kB
-              limit: 10 * 1024,
-            },
-          },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              mozjpeg: {
-                enabled: false,
-                // NOTE: mozjpeg is disabled as it causes errors in some Linux environments
-                // Try enabling it in your environment by switching the config to:
-                // enabled: true,
-                // progressive: true,
-              },
-              gifsicle: {
-                interlaced: false,
-              },
-              optipng: {
-                optimizationLevel: 7,
-              },
-              pngquant: {
-                quality: '65-90',
-                speed: 4,
-              },
-            },
-          },
+          'file-loader',
         ],
       },
       {
         test: /\.html$/,
         use: 'html-loader',
       },
+      // {
+      //   test: /\.json$/,
+      //   use: 'json-loader',
+      // },
       {
         test: /\.(mp4|webm)$/,
         use: {
@@ -114,19 +78,35 @@ module.exports = options => ({
     ],
   },
   plugins: options.plugins.concat([
+    new webpack.ProvidePlugin({
+      // make fetch available
+      fetch: 'exports-loader?self.fetch!whatwg-fetch',
+    }),
+
     // Always expose NODE_ENV to webpack, in order to use `process.env.NODE_ENV`
-    // inside your code for any environment checks; Terser will automatically
+    // inside your code for any environment checks; UglifyJS will automatically
     // drop any unreachable code.
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        APPDYNAMIC_API_KEY: JSON.stringify(process.env.APPDYNAMIC_API_KEY),
+        BING_API_KEY: JSON.stringify(process.env.BING_API_KEY),
       },
     }),
+    new webpack.NamedModulesPlugin(),
   ]),
   resolve: {
-    modules: ['node_modules', 'app'],
-    extensions: ['.js', '.jsx', '.react.js'],
-    mainFields: ['browser', 'jsnext:main', 'main'],
+    modules: ['app', 'node_modules'],
+    extensions: [
+      '.js',
+      '.jsx',
+      '.react.js',
+    ],
+    mainFields: [
+      'browser',
+      'jsnext:main',
+      'main',
+    ],
   },
   devtool: options.devtool,
   target: 'web', // Make web variables accessible to webpack, e.g. window

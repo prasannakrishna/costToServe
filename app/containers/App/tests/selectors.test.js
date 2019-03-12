@@ -1,3 +1,10 @@
+/**
+ * Copyright © 2018, JDA Software Group, Inc. ALL RIGHTS RESERVED.
+ * <p>
+ * This software is the confidential information of JDA Software, Inc., and is licensed
+ * as restricted rights software. The use,reproduction, or disclosure of this software
+ * is subject to restrictions set forth in your license agreement with JDA.
+ */
 import { fromJS } from 'immutable';
 
 import {
@@ -76,11 +83,12 @@ describe('makeSelectRepos', () => {
 describe('makeSelectLocation', () => {
   const locationStateSelector = makeSelectLocation();
   it('should select the location', () => {
-    const mockedState = fromJS({
-      router: { location: { pathname: '/foo' } },
+    const route = fromJS({
+      location: { pathname: '/foo' },
     });
-    expect(locationStateSelector(mockedState)).toEqual(
-      mockedState.getIn(['router', 'location']).toJS(),
-    );
+    const mockedState = fromJS({
+      route,
+    });
+    expect(locationStateSelector(mockedState)).toEqual(route.get('location').toJS());
   });
 });

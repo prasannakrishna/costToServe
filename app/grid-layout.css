@@ -1,0 +1,55 @@
+.react-grid-item > .react-resizable-handle::after {
+  border-right: 2px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.react-grid-item > .react-resizable-handle{
+  z-index: 1000;
+}
+
+.widgetStyles {
+  overflow: auto;
+  background: #1f3138;
+}
+
+.removeStyles  {
+  position: "absolute";
+  right: "2px";
+  top: 0;
+  cursor: "pointer";
+}
+
+.closebutton {
+  position: absolute;
+  right: 8px;
+  top: 14px;
+  text-align: right;
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+
+.closebutton a {
+  width: 200px;
+  padding: 12px 48px;
+  text-align: center;
+  color: white;
+  border: solid 2px white;
+  z-index: 1;
+}
+
+.widgetStyles:hover .closebutton {
+  opacity: 1;
+}
+
+.infobutton {
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+
+.infobutton a {
+  z-index: 1;
+}
+
+.measureStyles:hover .infobutton{ 
+  opacity: 1;
+}

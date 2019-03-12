@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>ico_filter</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.00107830552 0.00738639281 13.8478376 0.00738639281 13.8478376 13.9820514 0.00107830552 13.9820514"></polygon>
+    </defs>
+    <g id="Inventory" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Quarter-Filter-specs" transform="translate(-84.000000, -219.000000)">
+            <g id="Group" transform="translate(70.000000, 206.000000)">
+                <g id="ico_filter" transform="translate(14.000000, 13.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M5.25934531,6.61096534 C5.40599487,6.77051861 5.48650834,6.97902696 5.48650834,7.19468806 L5.48650834,13.549466 C5.48650834,13.931923 5.94802311,14.1260359 6.22117587,13.8571605 L7.99392811,11.8256508 C8.23113736,11.5409782 8.36198973,11.4000796 8.36198973,11.1182105 L8.36198973,7.19608986 C8.36198973,6.98042875 8.44392298,6.77193838 8.58917073,6.61236714 L13.6758793,1.09286264 C14.0568626,0.678811297 13.7635635,0.00738639281 13.1999692,0.00738639281 L0.648528883,0.00738639281 C0.0848806162,0.00738639281 -0.209838254,0.677391528 0.172618742,1.09286264 L5.25934531,6.61096534 Z" id="Fill-1" fill="#D8D8D8" mask="url(#mask-2)"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

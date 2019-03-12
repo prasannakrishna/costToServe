@@ -1,0 +1,47 @@
+{
+  "objectTypes": [
+    {
+      "label": "Inventory",
+      "type": "Node"
+    },
+    {
+      "label": "Shipments",
+      "type": "Shipment"
+    },
+    {
+      "label": "Purchase Orders",
+      "type": "PurchaseOrder"
+    },
+    {
+      "label": "Sales Orders",
+      "type": "SalesOrder"
+    }
+  ], 
+  "config": [
+    {
+      "name": "title",
+      "label": "Title",
+      "type": "string",
+      "size": 64,
+      "searchable": false
+    },
+    {
+      "name": "alertStatusLmd",
+      "label": "Last Modified Date",
+      "type": "string",
+      "size": 64,
+      "searchable": false,
+      "textStyle": {
+        "textAlign": "right",
+        "fontSize": 12
+      }
+    },
+    {
+      "name": "objectNumber",
+      "label": "Id",
+      "type": "string",
+      "size": 64,
+      "render": {"format": "stripLeadingZeros"}
+    }
+  ]
+}

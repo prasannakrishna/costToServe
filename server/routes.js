@@ -27,13 +27,17 @@ if (MmUrl && MmUrl.startsWith('https:')) {
 
 function isAuthenticated(req, res, next) {
   // Bypass authentication for dev mode
+  console.log(req.user);
+  console.log(isDev);
   lctreferer = req.headers.referer;
   if (req.user || isDev) {
     return next();
   }
-  return res.status(401).json({
-    errors: [{ message: 'Unauthorized', code: 401 }],
-  });
+  return res.status(401).json(
+    { errors: [
+      { message: 'Unauthorized', code: 401 }],
+    }
+  );
 }
 
 function isTokenExpired(req, res, next) {
@@ -41,17 +45,13 @@ function isTokenExpired(req, res, next) {
     const decodedToken = jwt.decode(req.user.accessToken);
 
     // Give refresh 5 seconds buffer so it doesn't expire by the time it gets to API Gateway
-    if (Date.now() - 5000 > decodedToken.exp * 1000) {
-      refresh.requestNewAccessToken(
-        'azure_ad_oauth2',
-        req.user.refreshToken,
-        (err, accessToken, refreshToken, params) => {
-          req.user.accessToken = accessToken;
-          req.user.params = params;
-          req.user.refreshToken = refreshToken;
-          next();
-        },
-      );
+    if (Date.now() - 5000 > (decodedToken.exp * 1000)) {
+      refresh.requestNewAccessToken('azure_ad_oauth2', req.user.refreshToken, (err, accessToken, refreshToken, params) => {
+        req.user.accessToken = accessToken;
+        req.user.params = params;
+        req.user.refreshToken = refreshToken;
+        next();
+      });
     } else {
       next();
     }
@@ -62,26 +62,20 @@ function isTokenExpired(req, res, next) {
 
 function setProxyRequest(proxyReq, req) {
   if (req.user) {
-    proxyReq.setHeader(
-      'Authorization',
-      `${req.user.params.token_type} ${req.user.accessToken}`,
-    );
+    console.log(`${req.user.params.token_type} ${req.user.accessToken}`);
+    proxyReq.setHeader('Authorization', `${req.user.params.token_type} ${req.user.accessToken}`);
     proxyReq.setHeader('Provider', req.user.profile.provider);
   }
 }
 
 // eslint-disable-next-line func-names
-module.exports = function(app) {
+module.exports = function (app) {
   // Authentication related APIs
   app.get('/auth', passport.authenticate('azure_ad_oauth2'));
-  app.get(
-    '/auth/callback',
-    passport.authenticate('azure_ad_oauth2', {
-      failureRedirect:
-        '/login?error=You are not authorized to access this application',
-    }),
+  app.get('/auth/callback',
+    passport.authenticate('azure_ad_oauth2', { failureRedirect: '/login?error=You are not authorized to access this application' }),
     (req, res) => {
-      if (req.user && req.user.id && req.user.id.unique_name) {
+      if ((req.user && req.user.id && req.user.id.unique_name)) {
         const domain = req.user.id.unique_name.split('@')[1];
         if (ValidDomains) {
           const domains = ValidDomains.split(',');
@@ -92,31 +86,31 @@ module.exports = function(app) {
         }
         res.redirect(lctreferer);
       }
-    },
+    });
+
+  app.post('/logout',
+    (req, res) => {
+      req.session.destroy();
+      return res.status(204).send({});
+    }
   );
 
-  app.post('/logout', (req, res) => {
-    req.session.destroy();
-    return res.status(204).send({});
-  });
-
-  app.get('/keys', (req, res) =>
-    res.status(200).send({
-      appdynamicKey: process.env.APPDYNAMIC_API_KEY,
-      bingApiKey:
-        process.env.BING_API_KEY ||
-        'Agxz0zau-DBduqU_H7aaL3FC_BYwxZsX1Tbqf7bx2clEhr30oXxJd5659uh8Io5H',
-    }),
+  app.get('/keys',
+    (req, res) => res.status(200).send(
+      {
+        appdynamicKey: process.env.APPDYNAMIC_API_KEY,
+        bingApiKey: process.env.BING_API_KEY || 'Agxz0zau-DBduqU_H7aaL3FC_BYwxZsX1Tbqf7bx2clEhr30oXxJd5659uh8Io5H',
+      })
   );
 
-  app.get('/buildNumber', (req, res) =>
-    res.status(200).send({
-      buildNumber: process.env.LCT_APP_VERSION || 'dev',
-    }),
+  app.get('/buildNumber',
+    (req, res) => res.status(200).send(
+      {
+        buildNumber: process.env.LCT_APP_VERSION || 'dev',
+      })
   );
 
-  app.use(
-    '/api/v4/websocket',
+  app.use('/api/v4/websocket',
     isAuthenticated,
     isTokenExpired,
     proxy({
@@ -124,24 +118,11 @@ module.exports = function(app) {
       changeOrigin: true,
       logLevel: 'debug',
       ws: true,
-    }),
+    })
   );
 
-  app.use(
-    '/api/v4',
-    isAuthenticated,
-    isTokenExpired,
-    proxy({
-      target: ApiUrl || 'http://localhost:3001',
-      changeOrigin: true,
-      logLevel: 'debug',
-      ws: false,
-    }),
-  );
-
-  // For all finalized APIs
-  app.use(
-    '/api',
+// For all finalized APIs
+  app.use('/api',
     isAuthenticated,
     isTokenExpired,
     proxy({
@@ -150,12 +131,11 @@ module.exports = function(app) {
       logLevel: 'debug',
       ws: false,
       onProxyReq: setProxyRequest,
-    }),
+    })
   );
 
-  // For all APIs that are not yet finalized
-  app.use(
-    '/fakeapi',
+// For all APIs that are not yet finalized
+  app.use('/fakeapi',
     isAuthenticated,
     isTokenExpired,
     proxy({
@@ -164,6 +144,7 @@ module.exports = function(app) {
       logLevel: 'debug',
       ws: true,
       onProxyReq: setProxyRequest,
-    }),
+    })
   );
 };
+

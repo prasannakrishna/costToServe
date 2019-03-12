@@ -22,7 +22,7 @@ const sessionOptions = {};
 // }
 
 const hour = 3600000;
-module.exports = function(app) {
+module.exports = function (app) {
   setupAuth();
   app.use(cors(corsOptions));
   // add security related headers
@@ -33,18 +33,16 @@ module.exports = function(app) {
     });
     next();
   });
-  app.use(
-    session({
-      store: new FileStore(sessionOptions),
-      cookie: {
-        maxAge: hour,
-      },
-      rolling: true,
-      secret: 'dct-bff',
-      resave: false,
-      saveUninitialized: false,
-    }),
-  );
+  app.use(session({
+    store: new FileStore(sessionOptions),
+    cookie: {
+      maxAge: hour,
+    },
+    rolling: true,
+    secret: 'dct-bff',
+    resave: false,
+    saveUninitialized: false,
+  }));
   app.use(passport.initialize());
   app.use(passport.session());
 

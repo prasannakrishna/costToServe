@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`appReducer should handles alertsCountError 1`] = `
+Immutable.Map {
+  "loading": false,
+  "error": false,
+  "currentUser": false,
+  "userData": Immutable.Map {
+    "repositories": false,
+  },
+  "metaData": false,
+  "businessProcesses": false,
+  "buildNumber": false,
+}
+`;
+
+exports[`appReducer should handles alertsCountLoaded 1`] = `
+Immutable.Map {
+  "loading": false,
+  "error": false,
+  "currentUser": false,
+  "userData": Immutable.Map {
+    "repositories": false,
+  },
+  "metaData": false,
+  "businessProcesses": false,
+  "buildNumber": false,
+}
+`;
+
+exports[`appReducer should handles businessProcessesLoaded 1`] = `
+Immutable.Map {
+  "loading": false,
+  "error": false,
+  "currentUser": false,
+  "userData": Immutable.Map {
+    "repositories": false,
+  },
+  "metaData": false,
+  "businessProcesses": Array [
+    Object {},
+  ],
+  "buildNumber": false,
+}
+`;
+
+exports[`appReducer should handles businessProcessesLoadingError 1`] = `
+Immutable.Map {
+  "loading": false,
+  "error": false,
+  "currentUser": false,
+  "userData": Immutable.Map {
+    "repositories": false,
+  },
+  "metaData": false,
+  "businessProcesses": false,
+  "buildNumber": false,
+}
+`;
+
+exports[`appReducer should handles getAlertsCount 1`] = `
+Immutable.Map {
+  "loading": false,
+  "error": false,
+  "currentUser": false,
+  "userData": Immutable.Map {
+    "repositories": false,
+  },
+  "metaData": false,
+  "businessProcesses": false,
+  "buildNumber": false,
+}
+`;
+
+exports[`appReducer should handles getBusinessProcesses 1`] = `
+Immutable.Map {
+  "loading": false,
+  "error": false,
+  "currentUser": false,
+  "userData": Immutable.Map {
+    "repositories": false,
+  },
+  "metaData": false,
+  "businessProcesses": false,
+  "buildNumber": false,
+}
+`;
+
+exports[`appReducer should handles getMetaData 1`] = `
+Immutable.Map {
+  "loading": false,
+  "error": false,
+  "currentUser": false,
+  "userData": Immutable.Map {
+    "repositories": false,
+  },
+  "metaData": false,
+  "businessProcesses": false,
+  "buildNumber": false,
+}
+`;
+
+exports[`appReducer should handles loadRepos 1`] = `
+Immutable.Map {
+  "loading": true,
+  "error": false,
+  "currentUser": false,
+  "userData": Immutable.Map {
+    "repositories": false,
+  },
+  "metaData": false,
+  "businessProcesses": false,
+  "buildNumber": false,
+}
+`;
+
+exports[`appReducer should handles logout 1`] = `
+Immutable.Map {
+  "loading": false,
+  "error": false,
+  "currentUser": false,
+  "userData": Immutable.Map {
+    "repositories": false,
+  },
+  "metaData": false,
+  "businessProcesses": false,
+  "buildNumber": false,
+}
+`;
+
+exports[`appReducer should handles metaDataLoaded 1`] = `
+Immutable.Map {
+  "loading": false,
+  "error": false,
+  "currentUser": false,
+  "userData": Immutable.Map {
+    "repositories": false,
+  },
+  "metaData": Array [
+    Object {},
+  ],
+  "businessProcesses": false,
+  "buildNumber": false,
+}
+`;
+
+exports[`appReducer should handles metaDataLoadingError 1`] = `
+Immutable.Map {
+  "loading": false,
+  "error": Array [
+    Object {},
+  ],
+  "currentUser": false,
+  "userData": Immutable.Map {
+    "repositories": false,
+  },
+  "metaData": false,
+  "businessProcesses": false,
+  "buildNumber": false,
+}
+`;
+
+exports[`appReducer should handles repoLoadingError 1`] = `
+Immutable.Map {
+  "loading": false,
+  "error": Array [
+    Object {},
+  ],
+  "currentUser": false,
+  "userData": Immutable.Map {
+    "repositories": false,
+  },
+  "metaData": false,
+  "businessProcesses": false,
+  "buildNumber": false,
+}
+`;
+
+exports[`appReducer should handles reposLoaded 1`] = `
+Immutable.Map {
+  "loading": false,
+  "error": false,
+  "currentUser": undefined,
+  "userData": Immutable.Map {
+    "repositories": Array [
+      Object {},
+    ],
+  },
+  "metaData": false,
+  "businessProcesses": false,
+  "buildNumber": false,
+}
+`;

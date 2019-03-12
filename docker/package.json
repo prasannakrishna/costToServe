@@ -10,7 +10,6 @@
     "npm": ">=3",
     "node": ">=5"
   },
-  "author": "Max Stoiber",
   "license": "MIT",
   "scripts": {
     "start": "cross-env NODE_ENV=production node server"

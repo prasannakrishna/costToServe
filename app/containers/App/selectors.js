@@ -1,43 +1,129 @@
 /**
+ * Copyright © 2018, JDA Software Group, Inc. ALL RIGHTS RESERVED.
+ * <p>
+ * This software is the confidential information of JDA Software, Inc., and is licensed
+ * as restricted rights software. The use,reproduction, or disclosure of this software
+ * is subject to restrictions set forth in your license agreement with JDA.
+ */
+/**
  * The global state selectors
  */
 
 import { createSelector } from 'reselect';
 
-const selectGlobal = state => state.get('global');
+const selectAppDomain = (state) => state.get('app');
 
-const selectRouter = state => state.get('router');
+/**
+ * Default selector used by App
+ */
 
-const selectAppDomain = state => state.get('app');
+const makeSelectApp = () => createSelector(
+  selectAppDomain,
+  (substate) => substate.toJS()
+);
 
-const makeSelectApp = () =>
-  createSelector(selectAppDomain, substate => substate.toJS());
+/**
+ * Other specific selectors
+ */
+const selectGlobal = (state) => state.get('global');
 
-const makeSelectCurrentUser = () =>
-  createSelector(selectGlobal, globalState => globalState.get('currentUser'));
+const selectRoute = (state) => state.get('route');
 
-const makeSelectLoading = () =>
-  createSelector(selectGlobal, globalState => globalState.get('loading'));
+const selectAlerts = (state) => state.get('alertsCount');
 
-const makeSelectError = () =>
-  createSelector(selectGlobal, globalState => globalState.get('error'));
+const makeSelectCurrentUser = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('currentUser')
+);
 
-const makeSelectRepos = () =>
-  createSelector(selectGlobal, globalState =>
-    globalState.getIn(['userData', 'repositories']),
-  );
+const makeSelectLoading = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('loading')
+);
 
-const makeSelectLocation = () =>
-  createSelector(selectRouter, routerState =>
-    routerState.get('location').toJS(),
-  );
+const makeSelectError = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('error')
+);
+
+const makeSelectRepos = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.getIn(['userData', 'repositories'])
+);
+
+const makeSelectLocation = () => createSelector(
+  selectRoute,
+  (routeState) => routeState.get('location').toJS()
+);
+
+const makeAlertsCount = () => createSelector(
+   selectAlerts,
+   (substate) => substate && substate.get('alertsCount')
+);
+
+const makeAlertsCountLastUpdated = () => createSelector(
+  selectAlerts,
+  (substate) => substate && substate.get('lastUpdatedTimeStamp')
+);
+
+const makeSelectPreferences = () => createSelector(
+    selectGlobal,
+    (globalState) => globalState.getIn(['userData', 'preferences'])
+);
+
+const makeSelectProfile = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.getIn(['userData', 'profile'])
+);
+
+const makeSelectMetaData = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('metaData')
+);
+
+const makeSelectBusinessProcesses = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('businessProcesses')
+);
+
+const makeSelectGlobalConfig = () => createSelector(
+  selectGlobal,
+  (globalState) => globalState.get('globalConfig')
+);
+
+const makeSelectSitRoomUnread = () => createSelector(
+  selectAlerts,
+  (substate) => substate && substate.get('sitRoomUnreadCount')
+);
+
+const makeSelectSitRoomActive = () => createSelector(
+  selectAlerts,
+  (substate) => substate && substate.get('activeRoomsCount')
+);
+
+const makeSelectSitRoomPending = () => createSelector(
+  selectAlerts,
+  (substate) => substate && substate.get('pendingRooms')
+);
 
 export {
+  selectAppDomain,
+  makeSelectApp,
   selectGlobal,
   makeSelectCurrentUser,
   makeSelectLoading,
   makeSelectError,
   makeSelectRepos,
   makeSelectLocation,
-  makeSelectApp,
+  makeAlertsCount,
+  makeAlertsCountLastUpdated,
+  makeSelectBusinessProcesses,
+  makeSelectMetaData,
+  selectAlerts,
+  makeSelectPreferences,
+  makeSelectProfile,
+  makeSelectGlobalConfig,
+  makeSelectSitRoomUnread,
+  makeSelectSitRoomActive,
+  makeSelectSitRoomPending,
 };

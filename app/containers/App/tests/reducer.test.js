@@ -1,60 +1,81 @@
+/**
+ * Copyright © 2018, JDA Software Group, Inc. ALL RIGHTS RESERVED.
+ * <p>
+ * This software is the confidential information of JDA Software, Inc., and is licensed
+ * as restricted rights software. The use,reproduction, or disclosure of this software
+ * is subject to restrictions set forth in your license agreement with JDA.
+ */
 import { fromJS } from 'immutable';
-
 import appReducer from '../reducer';
-import { loadRepos, reposLoaded, repoLoadingError } from '../actions';
+import {
+  loadRepos,
+  reposLoaded,
+  repoLoadingError,
+  logout,
+  getAlertsCount,
+  alertsCountLoaded,
+  alertsCountError,
+  getMetaData,
+  metaDataLoaded,
+  metaDataLoadingError,
+  getBusinessProcesses,
+  businessProcessesLoaded,
+  businessProcessesLoadingError,
+} from '../actions';
+
+const initialState = fromJS({
+  loading: false,
+  error: false,
+  currentUser: false,
+  userData: {
+    repositories: false,
+  },
+  metaData: false,
+  businessProcesses: false,
+  buildNumber: false,
+});
 
 describe('appReducer', () => {
-  let state;
-  beforeEach(() => {
-    state = fromJS({
-      loading: false,
-      error: false,
-      currentUser: false,
-      userData: fromJS({
-        repositories: false,
-      }),
-    });
+  it('returns the initial state', () => {
+    expect(appReducer(undefined, {})).toEqual(initialState);
   });
-
-  it('should return the initial state', () => {
-    const expectedResult = state;
-    expect(appReducer(undefined, {})).toEqual(expectedResult);
+  it('should handles loadRepos', () => {
+    expect(appReducer(initialState, loadRepos([{}]))).toMatchSnapshot();
   });
-
-  it('should handle the loadRepos action correctly', () => {
-    const expectedResult = state
-      .set('loading', true)
-      .set('error', false)
-      .setIn(['userData', 'repositories'], false);
-
-    expect(appReducer(state, loadRepos())).toEqual(expectedResult);
+  it('should handles logout', () => {
+    expect(appReducer(initialState, logout([{}]))).toMatchSnapshot();
   });
-
-  it('should handle the reposLoaded action correctly', () => {
-    const fixture = [
-      {
-        name: 'My Repo',
-      },
-    ];
-    const username = 'test';
-    const expectedResult = state
-      .setIn(['userData', 'repositories'], fixture)
-      .set('loading', false)
-      .set('currentUser', username);
-
-    expect(appReducer(state, reposLoaded(fixture, username))).toEqual(
-      expectedResult,
-    );
+  it('should handles reposLoaded', () => {
+    expect(appReducer(initialState, reposLoaded([{}]))).toMatchSnapshot();
   });
-
-  it('should handle the repoLoadingError action correctly', () => {
-    const fixture = {
-      msg: 'Not found',
-    };
-    const expectedResult = state.set('error', fixture).set('loading', false);
-
-    expect(appReducer(state, repoLoadingError(fixture))).toEqual(
-      expectedResult,
-    );
+  it('should handles getAlertsCount', () => {
+    expect(appReducer(initialState, getAlertsCount([{}]))).toMatchSnapshot();
+  });
+  it('should handles alertsCountLoaded', () => {
+    expect(appReducer(initialState, alertsCountLoaded([{}]))).toMatchSnapshot();
+  });
+  it('should handles getMetaData', () => {
+    expect(appReducer(initialState, getMetaData([{}]))).toMatchSnapshot();
+  });
+  it('should handles alertsCountError', () => {
+    expect(appReducer(initialState, alertsCountError([{}]))).toMatchSnapshot();
+  });
+  it('should handles metaDataLoaded', () => {
+    expect(appReducer(initialState, metaDataLoaded([{}]))).toMatchSnapshot();
+  });
+  it('should handles metaDataLoadingError', () => {
+    expect(appReducer(initialState, metaDataLoadingError([{}]))).toMatchSnapshot();
+  });
+  it('should handles getBusinessProcesses', () => {
+    expect(appReducer(initialState, getBusinessProcesses([{}]))).toMatchSnapshot();
+  });
+  it('should handles businessProcessesLoaded', () => {
+    expect(appReducer(initialState, businessProcessesLoaded([{}]))).toMatchSnapshot();
+  });
+  it('should handles businessProcessesLoadingError', () => {
+    expect(appReducer(initialState, businessProcessesLoadingError([{}]))).toMatchSnapshot();
+  });
+  it('should handles repoLoadingError', () => {
+    expect(appReducer(initialState, repoLoadingError([{}]))).toMatchSnapshot();
   });
 });

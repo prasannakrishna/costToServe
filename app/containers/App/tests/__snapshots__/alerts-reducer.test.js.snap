@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`alert reducer should handles alertsCountError 1`] = `
+Immutable.Map {
+  "pendingRooms": Immutable.List [],
+  "currentUser": false,
+  "alertsCountLoading": false,
+  "sitRoomUnreadCount": 0,
+  "alertsCountError": true,
+  "lastUpdatedTimeStamp": 0,
+  "activeRooms": 0,
+  "alertsCount": 0,
+  "categoryAlertsCount": Immutable.Map {
+    "inventory": 0,
+    "shipments": 0,
+    "purchaseorder": 0,
+    "salesorder": 0,
+  },
+}
+`;
+
+exports[`alert reducer should handles alertsCountLoaded 1`] = `
+Immutable.Map {
+  "pendingRooms": Immutable.List [],
+  "currentUser": false,
+  "alertsCountLoading": false,
+  "sitRoomUnreadCount": 0,
+  "alertsCountError": false,
+  "lastUpdatedTimeStamp": 0,
+  "activeRooms": 0,
+  "alertsCount": undefined,
+  "categoryAlertsCount": undefined,
+}
+`;
+
+exports[`alert reducer should handles getAlertsCount 1`] = `
+Immutable.Map {
+  "pendingRooms": Immutable.List [],
+  "currentUser": false,
+  "alertsCountLoading": true,
+  "sitRoomUnreadCount": 0,
+  "alertsCountError": false,
+  "lastUpdatedTimeStamp": 0,
+  "activeRooms": 0,
+  "alertsCount": 0,
+  "categoryAlertsCount": Immutable.Map {
+    "inventory": 0,
+    "shipments": 0,
+    "purchaseorder": 0,
+    "salesorder": 0,
+  },
+}
+`;

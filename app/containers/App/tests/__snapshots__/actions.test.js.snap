@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Actions alertsCountError Action has a type of LOAD_ALERTS_COUNT_ERROR 1`] = `
+Object {
+  "error": undefined,
+  "type": "boilerplate/App/LOAD_ALERTS_COUNT_ERROR",
+}
+`;
+
+exports[`App Actions alertsCountLoaded Action has a type of LOAD_ALERTS_COUNT_SUCCESS 1`] = `
+Object {
+  "alertsCount": undefined,
+  "type": "boilerplate/App/LOAD_ALERTS_COUNT_SUCCESS",
+}
+`;
+
+exports[`App Actions businessProcessesLoaded Action has a type of LOAD_BUSINESS_PROCESSES_SUCCESS 1`] = `
+Object {
+  "businessProcesses": undefined,
+  "type": "boilerplate/App/LOAD_BUSINESS_PROCESSES_SUCCESS",
+}
+`;
+
+exports[`App Actions businessProcessesLoadingError Action has a type of LOAD_BUSINESS_PROCESSES_ERROR 1`] = `
+Object {
+  "error": undefined,
+  "type": "boilerplate/App/LOAD_BUSINESS_PROCESSES_ERROR",
+}
+`;
+
+exports[`App Actions getAlertsCount Action has a type of LOAD_ALERTS_COUNT 1`] = `
+Object {
+  "durationObj": undefined,
+  "filterId": undefined,
+  "preferences": undefined,
+  "type": "boilerplate/App/LOAD_ALERTS_COUNT",
+}
+`;
+
+exports[`App Actions getBusinessProcesses Action has a type of LOAD_BUSINESS_PROCESSES 1`] = `
+Object {
+  "type": "boilerplate/App/LOAD_BUSINESS_PROCESSES",
+}
+`;
+
+exports[`App Actions getMetaData Action has a type of LOAD_METADATA 1`] = `
+Object {
+  "type": "boilerplate/App/LOAD_METADATA",
+}
+`;
+
+exports[`App Actions loadRepos Action has a type of LOAD_REPOS 1`] = `
+Object {
+  "type": "boilerplate/App/LOAD_REPOS",
+}
+`;
+
+exports[`App Actions logout Action has a type of LOGOUT 1`] = `
+Object {
+  "type": "boilerplate/App/LOGOUT",
+}
+`;
+
+exports[`App Actions metaDataLoaded Action has a type of LOAD_METADATA_SUCCESS 1`] = `
+Object {
+  "metaData": undefined,
+  "type": "boilerplate/App/LOAD_METADATA_SUCCESS",
+}
+`;
+
+exports[`App Actions metaDataLoadingError Action has a type of LOAD_METADATA_ERROR 1`] = `
+Object {
+  "error": undefined,
+  "type": "boilerplate/App/LOAD_METADATA_ERROR",
+}
+`;
+
+exports[`App Actions repoLoadingError Action has a type of LOAD_REPOS_ERROR 1`] = `
+Object {
+  "error": undefined,
+  "type": "boilerplate/App/LOAD_REPOS_ERROR",
+}
+`;
+
+exports[`App Actions reposLoaded Action has a type of LOAD_REPOS_SUCCESS 1`] = `
+Object {
+  "repos": undefined,
+  "type": "boilerplate/App/LOAD_REPOS_SUCCESS",
+  "username": undefined,
+}
+`;

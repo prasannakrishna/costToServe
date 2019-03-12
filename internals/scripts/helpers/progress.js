@@ -1,4 +1,11 @@
-'use strict';
+/**
+ * Copyright © 2018, JDA Software Group, Inc. ALL RIGHTS RESERVED.
+ * <p>
+ * This software is the confidential information of JDA Software, Inc., and is licensed
+ * as restricted rights software. The use,reproduction, or disclosure of this software
+ * is subject to restrictions set forth in your license agreement with JDA.
+ */
+
 
 const readline = require('readline');
 
@@ -14,7 +21,7 @@ function animateProgress(message, amountOfDots) {
   }
 
   let i = 0;
-  return setInterval(function() {
+  return setInterval(() => {
     readline.cursorTo(process.stdout, 0);
     i = (i + 1) % (amountOfDots + 1);
     const dots = new Array(i + 1).join('.');

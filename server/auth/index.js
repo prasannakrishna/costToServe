@@ -6,6 +6,7 @@
  * is subject to restrictions set forth in your license agreement with JDA.
  */
 const setupAzurePassport = require('./azureAd/passport');
-module.exports = function() {
+module.exports = function () {
   setupAzurePassport();
 };
+

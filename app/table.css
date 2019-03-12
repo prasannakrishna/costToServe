@@ -1,0 +1,155 @@
+/* Collection default theme */
+
+.ReactVirtualized__Collection {
+}
+
+.ReactVirtualized__Collection__innerScrollContainer {
+
+}
+
+/* Grid default theme */
+
+.ReactVirtualized__Grid {
+}
+
+.ReactVirtualized__Grid__innerScrollContainer {
+  /*background-color: #D7E4EA;*/
+}
+
+/* Table default theme */
+
+.ReactVirtualized__Table {
+}
+
+.ReactVirtualized__Table__Grid {
+}
+
+.ReactVirtualized__Table__headerRow {
+  font-size: 13px;
+  /*color: rgba(14,14,14,0.73);*/
+  font-weight: 500;
+  /*background-color: #D7E4EA;*/
+  line-height: 1;
+  /*border-bottom: 1px solid #EDF4F7;*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.ReactVirtualized__Table__row {
+  font-size: 14px;
+  /*color: rgba(14,14,14,0.9);*/
+  font-weight: 400;
+  /*background-color: #D7E4EA;*/
+  /* border-bottom: 1px solid #EDF4F7; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: left;
+  /* margin-right: 14px;
+  margin-left: 14px; */
+  /* padding-left: 24px; */
+}
+
+.ReactVirtualized__Table__row::after {
+  content : "";
+  position: absolute;
+  left    : 14;
+  bottom  : 0;
+  height  : 1px;
+  width   : calc(100% - 28px);  /* or 100px */
+  /*border-bottom: 1px solid #EDF4F7;*/
+  margin-left: 14px;
+}
+
+
+.ReactVirtualized__Table__headerTruncatedText {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.ReactVirtualized__Table__headerColumn,
+.ReactVirtualized__Table__rowColumn {
+  margin-right: 14px;
+  min-width: 0px;
+}
+.ReactVirtualized__Table__rowColumn {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ReactVirtualized__Table__headerColumn:first-of-type,
+.ReactVirtualized__Table__rowColumn:first-of-type {
+  margin-left: 22px;
+}
+.ReactVirtualized__Table__sortableHeaderColumn {
+  cursor: pointer;
+}
+
+.ReactVirtualized__Table__sortableHeaderIconContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.ReactVirtualized__Table__sortableHeaderIcon {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 24px;
+  flex: 0 0 24px;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+}
+
+/* List default theme */
+
+.ReactVirtualized__List {
+}
+
+.subBar_Table{
+  height:38px;
+  line-height: 38px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: 'Roboto medium', sans-serif;
+  /*color: rgba(14, 14, 14, 0.73);*/
+  /*background: #EDF4F7;*/
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: left;
+  padding-left: 14px;
+}
+
+a {
+  color: #007AB4;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+
+}
+
+.outerTablePadding{
+  padding:0em;
+}
