@@ -27,8 +27,6 @@ if (MmUrl && MmUrl.startsWith('https:')) {
 
 function isAuthenticated(req, res, next) {
   // Bypass authentication for dev mode
-  console.log(req.user);
-  console.log(isDev);
   lctreferer = req.headers.referer;
   if (req.user || isDev) {
     return next();
@@ -62,7 +60,6 @@ function isTokenExpired(req, res, next) {
 
 function setProxyRequest(proxyReq, req) {
   if (req.user) {
-    console.log(`${req.user.params.token_type} ${req.user.accessToken}`);
     proxyReq.setHeader('Authorization', `${req.user.params.token_type} ${req.user.accessToken}`);
     proxyReq.setHeader('Provider', req.user.profile.provider);
   }

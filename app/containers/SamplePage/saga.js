@@ -10,7 +10,7 @@ export default function* samplePageSaga() {
   yield takeLatest(LOAD_CONFIG, getConfiguration);
 }
 export function* getConfiguration() {
-  const requestURL = `/api/v1/processModel/demand/delivery/outboundDelivery/pages/deliveryList_Ocean`;
+  const requestURL = '/api/v1/sampleservice/laptops';
   try {
     const config = yield call(request, requestURL);
     yield put(configLoaded(config));

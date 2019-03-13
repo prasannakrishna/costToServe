@@ -31,9 +31,9 @@ export class SamplePage extends React.Component {
       <div style={{ margin: 5 }}>
         <Typography variant="title">Welcome to YODA Platform</Typography>
         <Typography variant="body2">
-          Here is a sample data from REST API
+          Here is a sample data from REST API /sampleservices/laptops
         </Typography>
-        <Typography variant="body2">{configurations.totalCount}</Typography>
+        <Typography variant="body2">Sample Data Type: {configurations.dataType}</Typography>
       </div>
     );
   }
