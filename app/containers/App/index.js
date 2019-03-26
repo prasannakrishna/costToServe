@@ -14,11 +14,11 @@ import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 import NavBar from 'components/NavBar';
-import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
-import { DarkTheme, GlobalStyle } from '@jda/luminate-platform-ui';
+import { DarkTheme, GlobalStyle, ThemeProvider } from '@jda/luminate-platform-ui';
 
 import SamplePage from 'containers/SamplePage/Loadable';
 import Sample2Page from 'containers/Sample2Page/Loadable';
+import Forms from 'containers/Forms/Loadable';
 import saga from 'containers/App/logout-saga';
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
@@ -34,7 +34,7 @@ const AppWrapper = styled.div``;
 export class App extends React.Component {
   render() {
     return (
-      <MuiThemeProvider theme={DarkTheme}>
+      <ThemeProvider >
         <AppWrapper
           style={{
             backgroundColor: DarkTheme.palette.primary[200],
@@ -63,6 +63,11 @@ export class App extends React.Component {
                 link: '/link2',
                 title: 'LINK2',
               },
+              {
+                visible: true,
+                link: '/forms',
+                title: 'FORM ELEMENTS',
+              },
             ]}
           />
 
@@ -70,10 +75,11 @@ export class App extends React.Component {
             <Route exact path="/" component={SamplePage} />
             <Route path="/link1" component={SamplePage} />
             <Route path="/link2" component={Sample2Page} />
+            <Route path="/forms" component={Forms} />
           </Switch>
           <GlobalStyle />
         </AppWrapper>
-      </MuiThemeProvider>
+      </ThemeProvider>
     );
   }
 }
