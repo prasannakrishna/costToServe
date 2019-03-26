@@ -55,6 +55,7 @@ export const Breadcrumbs = BreadcrumbConfig({
     // '/homepage': <img src={Background} className="icon" alt="Watch Tower Icon" />,
     '/link1': 'Link 1',
     '/link2': 'Link 2',
+    '/forms': 'Forms demo',
   },
   dynamicRoutesMap: {},
   Breadcrumb,
