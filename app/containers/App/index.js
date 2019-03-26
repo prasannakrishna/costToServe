@@ -14,7 +14,7 @@ import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Switch, Route } from 'react-router-dom';
 import NavBar from 'components/NavBar';
-import { DarkTheme, GlobalStyle, JDAThemeProvider } from '@jda/luminate-platform-ui';
+import { DarkTheme, GlobalStyle, ThemeProvider } from '@jda/luminate-platform-ui';
 
 import SamplePage from 'containers/SamplePage/Loadable';
 import Sample2Page from 'containers/Sample2Page/Loadable';
@@ -34,7 +34,7 @@ const AppWrapper = styled.div``;
 export class App extends React.Component {
   render() {
     return (
-      <JDAThemeProvider >
+      <ThemeProvider >
         <AppWrapper
           style={{
             backgroundColor: DarkTheme.palette.primary[200],
@@ -79,7 +79,7 @@ export class App extends React.Component {
           </Switch>
           <GlobalStyle />
         </AppWrapper>
-      </JDAThemeProvider>
+      </ThemeProvider>
     );
   }
 }
