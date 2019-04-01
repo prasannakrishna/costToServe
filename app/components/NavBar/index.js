@@ -23,7 +23,7 @@ import Notifications from '@material-ui/icons/Notifications';
 import HelpOutline from '@material-ui/icons/HelpOutline';
 // import Badge from '@material-ui/core/Badge';
 // import Grid from '@material-ui/core/Grid';
-// import Background from './lcticon.svg';
+import Background from 'images/logo.png';
 // import UserName from './UserName';
 import { Breadcrumbs } from './helper';
 
@@ -71,7 +71,7 @@ const iconItems = [
   },
 ];
 
-const BreadCrumbComponent = props => {
+const BreadCrumbComponent = (props) => {
   const { location } = props;
   return <Breadcrumbs pathname={location.pathname} />;
 };
@@ -82,7 +82,7 @@ export class NavBarComponent extends React.Component {
 
   render() {
     const { classes, menuItems, location } = this.props;
-    const npanel = <NavPanel menuItems={menuItems} />;
+    const npanel = <NavPanel menuItems={menuItems} version={123} titleLogo={Background} />;
     const bcrumbs = <BreadCrumbComponent location={location} />;
     return (
       <NavBar
