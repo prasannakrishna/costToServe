@@ -23,6 +23,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import scriptjs from 'scriptjs';
 import { ConnectedRouter } from 'react-router-redux';
+import { BrowserRouter } from 'react-router-dom';
 import FontFaceObserver from 'fontfaceobserver';
 import createHistory from 'history/createBrowserHistory';
 import * as log from 'loglevel';
@@ -108,7 +109,9 @@ const render = (messages) => {
     <Provider store={store}>
       <LanguageProvider messages={messages}>
         <ConnectedRouter history={history}>
-          <AppContainer />
+          <BrowserRouter>
+            <AppContainer />
+          </BrowserRouter>
         </ConnectedRouter>
       </LanguageProvider>
     </Provider>,
